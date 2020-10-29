@@ -91,8 +91,32 @@ const exportToXLSX = ({
     });
 };
 
+const renderChildrenOrDefault = (children, className, label = null, disabled = false, action = null) => {
+    const onClickAction = action ? action : () => { };
+    if (!children) {
+        return (
+            <button
+                onClick={onClickAction}
+                className={className}
+                disabled={disabled}
+            >
+                {label ? label : 'No data to export.'}
+            </button>
+        );
+    }
+
+    return (
+        <span
+            onClick={onClickAction}
+            className={className}
+        >
+            {children}
+        </span>
+    );
+}
+
 function ExcelExporter({
-    jsonData = [],
+    data = [],
     fileName = null,
     sheetName = null,
     disabled = false,
@@ -104,7 +128,7 @@ function ExcelExporter({
     const handleExport = event => {
         if (!disabled) {
             exportToXLSX({
-                jsonData,
+                data,
                 fileName,
                 sheetName,
                 minCellWidth,
@@ -112,26 +136,11 @@ function ExcelExporter({
         }
     };
 
-    if (!children) {
-        return (
-            <button
-                onClick={handleExport}
-                className={className}
-                disabled={disabled}
-            >
-                {label}
-            </button>
-        );
+    if (!data || data.length === 0) {
+        return renderChildrenOrDefault(children, className, null, true);
     }
 
-    return (
-        <span
-            onClick={handleExport}
-            className={className}
-        >
-            {children}
-        </span>
-    );
+    return renderChildrenOrDefault(children, className, label, disabled, handleExport);
 }
 
 export default ExcelExporter;

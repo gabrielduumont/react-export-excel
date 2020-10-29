@@ -1,7 +1,14 @@
 {
-  "name": "react-export-excel",
+  "name": "@gabrielduumont/react-export-excel",
   "version": "0.1.0",
+  "description": "React component that will export an array of objects into XLSX",
+  "author": "gabrielduumont",
+  "license": "MIT",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielduumont/react-export-excel.git"
+  },
   "babel": {
     "presets": [
       "@babel/preset-react"
@@ -43,8 +50,19 @@
       "last 1 safari version"
     ]
   },
+  "bugs": {
+    "url": "https://github.com/gabrielduumont/react-export-excel/issues"
+  },
+  "homepage": "https://github.com/gabrielduumont/react-export-excel#readme",
   "devDependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/preset-react": "^7.12.1"
-  }
+  },
+  "keywords": [
+    "react",
+    "excel",
+    "export",
+    "xlsx",
+    "react-export-excel"
+  ]
 }
