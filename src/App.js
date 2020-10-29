@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { ExcelExporter } from './components';
 
 function App() {
+  const data = [
+    {
+      'Column Title 1': 'Value 1',
+      'Column Title 2': 1,
+    },
+    {
+      'Column Title 1': 'Value 2',
+      'Column Title 2': 2,
+    },
+    {
+      'Column Title 1': 'Value 3',
+      'Column Title 2': 3,
+      'Column Title 3': '25-12-2015',
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ExcelExporter
+      jsonData={data}
+      fileName="Excel Report Name"
+      sheetName='Results'
+    />
   );
 }
 
