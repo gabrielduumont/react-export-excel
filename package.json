@@ -1,6 +1,6 @@
 {
   "name": "@gabrielduumont/react-export-excel",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React component that will export an array of objects into XLSX",
   "author": "gabrielduumont",
   "license": "MIT",
@@ -30,7 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish:npm": "rm -rf dist && mkdir dist &&  babel src/components -d dist --copy-files"
+    "publish:npm": "mkdir dist &&  babel src/components -d dist --copy-files"
   },
   "eslintConfig": {
     "extends": [
